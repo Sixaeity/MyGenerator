@@ -1,3 +1,4 @@
 # Folders
-obj/
+.vscode/
 bin/
+obj/
