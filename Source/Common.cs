@@ -33,7 +33,7 @@ namespace MyGenerator
                 case "about":
                     Console.WriteLine($"MyGenerator v. {Values.programVersion}.");
                     Console.WriteLine($"Last update - {Values.lastUpdate.ToString("yyyy/MM/dd")}.");
-                    Console.WriteLine("Copytight under MIT license.");
+                    Console.WriteLine("Copyright under MIT license.");
                     Console.WriteLine("Source located at https://github.com/Sixaeity/MyGenerator.\n");
                     // Console.WriteLine("For watching available commands type «list».\n");
                     return true;
