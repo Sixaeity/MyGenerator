@@ -6,8 +6,8 @@ namespace MyGenerator
     public static class Values
     {
         // Program constants.
-        public const string programVersion = "Alpha-1.0"; 
-        public readonly static DateTime lastUpdate = new DateTime(2020, 12, 25);
+        public const string programVersion = "Beta-1.0"; 
+        public readonly static DateTime lastUpdate = new DateTime(2021, 01, 03);
 
         // Characters used in generation.
         public static List<char> characters = new List<char> {};

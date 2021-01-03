@@ -34,8 +34,8 @@ namespace MyGenerator
                     Console.WriteLine($"MyGenerator v. {Values.programVersion}.");
                     Console.WriteLine($"Last update - {Values.lastUpdate.ToString("yyyy/MM/dd")}.");
                     Console.WriteLine("Copyright under MIT license.");
-                    Console.WriteLine("Source located at https://github.com/Sixaeity/MyGenerator.\n");
-                    // Console.WriteLine("For watching available commands type «list».\n");
+                    Console.WriteLine("Source located at https://github.com/Sixaeity/MyGenerator.");
+                    Console.WriteLine("For watching available commands type «list».\n");
                     return true;
 
                 case "c":
@@ -51,19 +51,28 @@ namespace MyGenerator
                     Console.WriteLine($"Output: {output}\n");
                     return true;
 
+                case "l":
+                case "list":
+                    List();
+                    return true;
+
                 case "q":
                 case "quit":
                     return false;
-
-                case "v":
-                case "version":
-                    Console.WriteLine($"Application version - {Values.programVersion}.\n");
-                    return true;
 
                 default:
                     Console.WriteLine("Unknown command.\n");
                     return true;
             }
+        }
+
+        public void List()
+        {
+            Console.WriteLine(" about, a - show application information.");
+            Console.WriteLine(" configure, c - configure generator parameters.");
+            Console.WriteLine(" generate, g - generate password.");
+            Console.WriteLine(" list, l - show commands list.");
+            Console.WriteLine(" quit, q - close program.\n");      
         }
     }
 }

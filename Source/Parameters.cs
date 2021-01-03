@@ -13,6 +13,7 @@ namespace MyGenerator
         public static bool includeLowerLetters = true;
         public static bool includeSymbols = true;
 
+        // At least one parameter must to be true.
         public static void ConfigureParameters()
         {
             Console.WriteLine(" Include numbers? (y/n)");
@@ -45,7 +46,7 @@ namespace MyGenerator
                     return false;
 
                 default:
-                    Console.WriteLine("\tUnknown option. Using value by default.\n");
+                    Console.WriteLine(" Unknown option. Using value by default.\n");
                     return true;
             }
         }
