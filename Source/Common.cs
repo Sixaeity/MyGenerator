@@ -7,7 +7,7 @@ namespace MyGenerator
     {
         public void ProgramLoop()
         {
-            Recognition("about");
+            About();
             bool loop = true;
             while (loop)
             {
@@ -31,11 +31,7 @@ namespace MyGenerator
             {
                 case "a":
                 case "about":
-                    Console.WriteLine($"MyGenerator v. {Values.programVersion}.");
-                    Console.WriteLine($"Last update - {Values.lastUpdate.ToString("yyyy/MM/dd")}.");
-                    Console.WriteLine("Copyright under MIT license.");
-                    Console.WriteLine("Source located at https://github.com/Sixaeity/MyGenerator.");
-                    Console.WriteLine("For watching available commands type «list».\n");
+                    About();
                     return true;
 
                 case "c":
@@ -45,10 +41,7 @@ namespace MyGenerator
 
                 case "g":
                 case "generate":
-                    List<char> characters = Values.GenerateCharactersList(Parameters.includeNumbers, Parameters.includeUpperLetters, Parameters.includeLowerLetters, Parameters.includeSymbols);
-                    List<char> randomizedCharacters = Values.RandomizeCharactersList(characters);
-                    string output = Generator.Generate(Parameters.charactersAmount, randomizedCharacters);
-                    Console.WriteLine($"Output: {output}\n");
+                    Generate();
                     return true;
 
                 case "l":
@@ -64,6 +57,24 @@ namespace MyGenerator
                     Console.WriteLine("Unknown command.\n");
                     return true;
             }
+        }
+
+        // Commands methods.
+        public void About()
+        {
+            Console.WriteLine($"MyGenerator v. {Values.programVersion}.");
+            Console.WriteLine($"Last update - {Values.lastUpdate.ToString("yyyy/MM/dd")}.");
+            Console.WriteLine("Copyright under MIT license.");
+            Console.WriteLine("Source located at https://github.com/Sixaeity/MyGenerator.");
+            Console.WriteLine("For watching available commands type «list».\n");
+        }
+
+        public void Generate()
+        {
+            List<char> characters = Values.GenerateCharactersList(Parameters.includeNumbers, Parameters.includeUpperLetters, Parameters.includeLowerLetters, Parameters.includeSymbols);
+            List<char> randomizedCharacters = Values.RandomizeCharactersList(characters);
+            string output = Generator.Generate(Parameters.charactersAmount, randomizedCharacters);
+            Console.WriteLine($"Output: {output}\n");
         }
 
         public void List()
